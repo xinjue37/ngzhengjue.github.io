@@ -7,7 +7,7 @@ This is my personal website hosted on GitHub Pages. The website showcases my pro
 - Responsive design that works on all devices
 - Modern and clean user interface
 - Smooth scrolling and animations
-- Sections for About, Experience, and Contact information
+- Sections for About, Education, Experience, and Contact information
 
 ## Technologies Used
 
@@ -19,7 +19,3 @@ This is my personal website hosted on GitHub Pages. The website showcases my pro
 ## Local Development
 
 To run this website locally, simply clone the repository and open `index.html` in your web browser.
-
-## License
-
-This project is open source and available under the MIT License.
