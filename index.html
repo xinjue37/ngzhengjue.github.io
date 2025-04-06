@@ -3,10 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ng Zheng Jue - Personal Website</title>
+    <title>Ng Zheng Jue - Machine Learning Engineer | Personal Portfolio</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Ng Zheng Jue - Machine Learning Engineer | Personal Portfolio">
+    <meta name="description" content="Ng Zheng Jue is a Machine Learning Engineer based in Kuala Lumpur, Malaysia. Currently pursuing Bachelor of Engineering in AI at Xiamen University Malaysia (XMUM) with First-Class Honors.">
+    <meta name="keywords" content="Ng Zheng Jue, Machine Learning Engineer, Data Scientist, Machine Learning, Deep Learning, Xiamen University Malaysia (XMUM), Kuala Lumpur">
+    <meta name="author" content="Ng Zheng Jue">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xinjue37.github.io/">
+    <meta property="og:title" content="Ng Zheng Jue - Machine Learning Engineer">
+    <meta property="og:description" content="Personal portfolio of Ng Zheng Jue, Machine Learning Engineer based in Kuala Lumpur, Malaysia.">
+    <meta property="og:image" content="img/personal_image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xinjue37.github.io/">
+    <meta property="twitter:title" content="Ng Zheng Jue - Machine Learning Engineer">
+    <meta property="twitter:description" content="Personal portfolio of Ng Zheng Jue, Machine Learning Engineer based in Kuala Lumpur, Malaysia.">
+    <meta property="twitter:image" content="img/personal_image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Existing stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Existing styles remain unchanged */
+        
+        .education, .experience {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .education .container, .experience .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .education-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-card h3 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .education-card .school {
+            color: #4a5568;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .date {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-card .achievements {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .education-card .achievements li {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .education-card .achievements li::before {
+            content: "•";
+            color: #4299e1;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .education-card .publication {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        /* Experience section styles */
+        .experience {
+            background-color: white;  /* Different background to alternate sections */
+        }
+        
+        .experience .timeline {
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content h3 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .timeline-content .company {
+            color: #4a5568;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-content ul li {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-content ul li::before {
+            content: "•";
+            color: #4299e1;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            justify-content: flex-start;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #2d3748;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .social-link:hover {
+            background-color: rgba(66, 153, 225, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-link i {
+            font-size: 1.3rem;
+        }
+
+        .resume-link {
+            margin-top: 2rem;
+            text-align: left;
+            width: 100%;
+        }
+
+        .resume-link a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #2d3748;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 500;
+            padding: 0.8rem 2rem;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            min-width: 180px;
+        }
+
+        .resume-link a:hover {
+            background-color: rgba(66, 153, 225, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .resume-link i {
+            margin-right: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        /* Add styles for contact info to ensure consistent spacing */
+        .contact-info {
+            margin-bottom: 1rem;
+            color: #718096;
+        }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ng Zheng Jue",
+        "jobTitle": "Machine Learning Engineer",
+        "url": "https://xinjue37.github.io",
+        "email": "ngzhengjue37@gmail.com",
+        "telephone": "(+60) 11-1076 4746",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kuala Lumpur",
+            "addressCountry": "Malaysia"
+        },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Xiamen University Malaysia (XMUM)"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/ng-zheng-jue/",
+            "https://github.com/xinjue37"
+        ]
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -16,6 +278,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -28,7 +291,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Ng Zheng Jue</h1>
-                    <p class="subtitle">AI Engineer & Data Scientist</p>
+                    <p class="subtitle">Machine Learning Engineer</p>
                     <p class="contact-info">Kuala Lumpur, Malaysia | (+60) 11-1076 4746 | ngzhengjue37@gmail.com</p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/ng-zheng-jue/" target="_blank" class="social-link">
@@ -36,6 +299,14 @@
                         </a>
                         <a href="https://github.com/xinjue37" target="_blank" class="social-link">
                             <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:ngzhengjue37@gmail.com" target="_blank" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="resume-link">
+                        <a href="doc/Ng Zheng Jue Resume.pdf" download>
+                            <i class="fas fa-file-download"></i> Resume
                         </a>
                     </div>
                 </div>
@@ -50,23 +321,28 @@
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>I am a Bachelor of Engineering in Artificial Intelligence student at Xiamen University, achieving First-Class Honors (Rank 1st) with a CGPA of 3.87. My research work on "Imitation learning in Sequential Crowd Counting using Deep Reinforcement Learning" has been accepted for publication at STEER 2024.</p>
-                        <p>As a Research Assistant at Xiamen University, I specialize in EEG data analysis and machine learning applications, developing innovative solutions like a diffusion model-based epileptic spike detection classifier. My experience as a Data Scientist Intern at MoneyLion has equipped me with expertise in LLM evaluation frameworks and automated pipelines.</p>
-                        <p>Beyond academics, I founded the Xiamen University AI Club, where I conduct workshops and lead project teams in developing AI-powered solutions. I'm passionate about applying AI to solve real-world problems and continuously expanding my knowledge in this rapidly evolving field.</p>
+                        
+                        <p>I am a Bachelor of Engineering in Artificial Intelligence at Xiamen University Malaysia (XMUM), where I have achieved First-Class Honors (Ranked 1st) with a CGPA of 3.87. I bring nearly three years of experience in solving real-world data science problems.</p>
+                        <p>As a Research Assistant at Xiamen University Malaysia (XMUM), I focus on EEG data analysis and machine learning. I developed a diffusion model-based epileptic spike detection classifier and an EEG epilepsy annotation model using deep learning, demonstrating proficiency in predictive modeling, time-series analysis, and pattern recognition. I also deployed these models using cloud platforms such as AWS EC2, highlighting my ability to build scalable machine learning solutions.</p>
+                        <p>During my Data Scientist Internship at MoneyLion, I worked on LLM evaluation frameworks and automated pipelines. I enhanced a bank transaction chatbot by refining SQL-generated responses, further strengthening my skills in SQL databases and data transformation.</p>
+                        <p>In addition to my academic and professional work, I founded the Xiamen University Malaysia (XMUM) AI Club, where I lead project teams and conduct workshops. Under my leadership, the club has developed Generative AI applications, such as chatbots and a journal summarization tool, and delivered Power BI workshops. I've also led agile-based projects and participated in data science initiatives, including optimizing airline customer satisfaction through exploratory data analysis.</p>
+                        
                     </div>
                     <div class="skills">
                         <h3>Technical Skills</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Machine Learning</span>
-                            <span class="skill-tag">Deep Learning</span>
-                            <span class="skill-tag">Computer Vision</span>
-                            <span class="skill-tag">Natural Language Processing</span>
-                            <span class="skill-tag">Langchain</span>
                             <span class="skill-tag">MySQL</span>
                             <span class="skill-tag">Java</span>
                             <span class="skill-tag">C</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Deep Learning</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">Image Processing</span>
+                            <span class="skill-tag">OpenCV</span>
+                            <span class="skill-tag">Natural Language Processing</span>
                             <span class="skill-tag">Chatbot Development</span>
+                            <span class="skill-tag">Langchain</span>
                             <span class="skill-tag">Business Analysis</span>
                             <span class="skill-tag">Cloud Computing</span>
                         </div>
@@ -77,6 +353,50 @@
                             <span class="skill-tag">Communication</span>
                             <span class="skill-tag">Teamwork</span>
                         </div>
+                        <h3>Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">English</span>
+                            <span class="skill-tag">Chinese</span>
+                            <span class="skill-tag">Malay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="education">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>BEng in Artificial Intelligence</h3>
+                        <div class="school">Xiamen University Malaysia</div>
+                        <div class="date">Apr 2021 – Mar 2025</div>
+                        <ul class="achievements">
+                            <li>CGPA: 3.87</li>
+                            <li>First-Class Honors (Ranked 1st)</li>
+                        </ul>
+                        <div class="publication">
+                            Publication: Imitation learning in Sequential Crowd Counting using Deep Reinforcement Learning, STEER, 2024
+                        </div>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>Foundation in Science</h3>
+                        <div class="school">Xiamen University Malaysia</div>
+                        <div class="date">Apr 2020 – Mar 2021</div>
+                        <ul class="achievements">
+                            <li>CGPA: 3.54</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-card">
+                        <h3>Science Stream</h3>
+                        <div class="school">SMJK Seg Hwa</div>
+                        <div class="date">Jan 2015 – Dec 2019</div>
+                        <ul class="achievements">
+                            <li>SPM: 8As, 3B</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -89,11 +409,10 @@
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3>Research Assistant</h3>
-                            <p class="company">Xiamen University</p>
+                            <p class="company">Xiamen University Malaysia (XMUM)</p>
                             <p class="date">Sep 2022 - Mar 2025</p>
                             <ul>
                                 <li>Conduct data preprocessing and analysis on raw EEG data collected from University Malaya (UM) using Python's MNE library and MATLAB</li>
-                                <li>Resolve format inconsistencies between two EEG recording systems for machine learning model training</li>
                                 <li>Develop a diffusion model-based epileptic spike detection classifier using PyTorch</li>
                                 <li>Outcome: Remove the need of manual annotation and facilitate automated EEG source imaging</li>
                             </ul>
@@ -114,7 +433,7 @@
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3>Founder of AI Club</h3>
-                            <p class="company">Xiamen University</p>
+                            <p class="company">Xiamen University Malaysia (XMUM)</p>
                             <p class="date">Dec 2023 - Sep 2024</p>
                             <ul>
                                 <li>Conducted bi-weekly interactive hands-on workshops on AI fundamentals</li>
@@ -140,7 +459,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Ng Zheng Jue. All rights reserved.</p>
+            <p>&copy; 2025 Ng Zheng Jue. All rights reserved.</p>
         </div>
     </footer>
 
